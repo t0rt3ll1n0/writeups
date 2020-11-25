@@ -1,0 +1,28 @@
+Provided by PentestingMadeSimple
+solved: true
+time: ~5h
+platform: ubuntu linux 20.04.1
+opened ports:
+22 > SSH
+80 > HTTP
+8080 > TOMCAT
+.::..::..::.
+openSSH v17.x
+tomcat v9.x
+apache v2.4.41
+user own: True
+system own: False
+.::..::..::.
+Writeup:
+SSH improper requests parsing > user enum > ssh user "tomcat"
+FFUF > arjun db > LFI
+Local File Read > script-manager's tomcat password in tomcat-users.xml
+.war reverse shell with msfvenom
+curl upload of .war reverse shell in script-manager (tomcat) > RCE
+PWNED!! 
+.::..::..::.
+--win--
+1' > OSCP - Darix (KNX)
+2' > VPS 10$ - Paolo
+3' > VPS 5$ - MIke
+SystemHunters (us) > 6'

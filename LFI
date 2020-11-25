@@ -1,0 +1,27 @@
+solved: True
+time: ~40min
+platform: ubuntu linux 20.04.1
+opened ports:
+22 > SSH
+80 > HTTP
+443 > HTTPS
+.::..::..::.
+openSSH > X.x
+apache > v2.4.41
+user own: True
+system own: True
+.::..::..::.
+Writeup:
+FFUF > website crawling > 1' FLAG
+OWASP ZAproxy > LFI
+Local File Read > /etc/passwd > user password
+ssh <user>@<hostnem> + password
+user own
+cat /home/user/user.txt > 2' FLAG
+check suid script
+wrong /bin script, it can be executed using "sudo" without root password
+system own
+cat /root/root.txt > 3' FLAG
+-=-=-=-=-=-
+-= WIN!! =-
+-=-=-=-=-=-

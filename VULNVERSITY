@@ -1,0 +1,36 @@
+platform = tryhackme
+ip = 10.10.78.117
+OS > ubuntu linux
+
+ports opened: {
+21 > FTP
+22 > SSH
+139 > SMB
+445 > SMB
+3128 > http-proxy
+3333 > http
+}
+
+services: {
+FTP > vsftpd 3.0.3
+SSH > OpenSSH 7.2p2
+SMB > Samba smbd 3.X
+http-proxy > Squid http proxy 3.5.12
+http > Apache httpd 2.4.18
+}
+
+writeup:
+nmap > os: linux > apache at port 3333
+subenum > notthing
+dirbuster > /internal/ > upload files
+tryied to upload a php reverse shell > a kind of WAF blocked
+tried using some "evasion" > .phtml work
+downloaded a e reverse shell and modified it > upload
+upload shell > RCE
+user own 
+cat /home/bill/user.txt > FLAG 1'
+check SUID > systemctl
+systemctl > privesc
+system own 
+cat /root/root.txt > FLAG 2'
+-------------------------------------- 

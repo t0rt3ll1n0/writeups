@@ -1,0 +1,29 @@
+solved: True
+time: 35min
+platform: ubuntu linux 18.04
+opened ports:
+21 > FTP
+80 > HTTP
+2222 > SSH
+.::..::..::.
+openSSH > 7.3
+apache > v2.4.14
+CMS made simple > v 2.3.x
+.::..::..::.
+Writeup:
+FFUF > too much multithreading > DoS rip *restart machine*
+manually > robots.txt > found a dir > rabbit hole
+GoBuster > CMS made simple v.2.3.x
+searchsploit > CVE-XXXX-XXXX > SQLi > user&password hash
+crackstation > hash cracked > pass: ******
+ssh > ssh user@<ip> -p 2222 *after insert the password*
+user own
+ls > user.txt > cat user.txt > FLAG 1'
+sudo -l > check SUID scripts > /usr/bin/vim
+sudo vim > :!bash > root shell
+system own
+cd /root/ > ls > cat root.txt > FLAG 2'
+-=-=-=-=-=-
+-= WIN!! =-
+-=-=-=-=-=-
+
